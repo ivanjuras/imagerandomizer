@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../style.css">
+  <title>Job Application Instructions for Commence</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="container">
+        <img class="job-instruction" :src="randomImage" alt="job post instructions">
+    </div>
+  </div> 
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      
+      data: {
+        images: [
+          'https://i.imgur.com/jAvcRcD.png', // Home - O
+          'https://i.imgur.com/ObIzVpo.png', // Customer Segmentation Software - O
+          'https://i.imgur.com/OUt9Gzl.png' // Sales Tracking System - O
+        ]
+      },
+
+      computed: {
+        randomImage: function() {
+          return this.images.sort(() => 0.5 - Math.random()).slice(0, 1);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
